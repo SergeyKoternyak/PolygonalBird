@@ -1,0 +1,91 @@
+@import url(reset.css);
+
+body {
+	background: url(background.png);
+}
+.button {
+	width: 150px;
+	height: 70px;
+	border: 1px solid;
+	perspective: 300;
+	transition: 1s;
+	transform-style: preserve-3d;
+	&:hover{
+		border-color: red;
+	}
+	.front-side, .back-side {
+		width: 150px;
+		display: block;
+		cursor: pointer;
+		backface-visibility: hidden;
+		position: absolute;
+		text-align: center;
+		padding: 28px 0;
+		top: 0;
+		left: 0;
+		color: black;
+	}
+	.front-side {
+		z-index: 2;
+	}
+	.back-side {
+		transform: rotateY(180deg);
+		text-decoration: none;
+	}
+}
+.flip{
+	transform: rotateY(180deg);
+}
+.parts {
+	position: absolute;
+}
+.bird {
+	width: 731px;
+	height: 580px;
+	margin: 50px auto 0;
+	position: relative;
+	overflow: hidden;
+}
+.head {
+	* {
+		top: -150px;
+		left: 600px;
+	}
+}
+.back {
+	* {
+		top: -150px;
+		left: 300px;
+	}
+}
+.wing {
+	* {
+		top: 700px;
+		left: 300px;
+	}
+}
+.tummy {
+	* {
+		top: 700px;
+		left: 300px;
+	}
+}
+.tail {
+	* {
+		top: -150px;
+		left: 0px;
+	}
+}
+.lags {
+	* {
+		top: 700px;
+		left: 200px;
+	}
+}
+.eye {
+	* {
+		top: -150px;
+		left: 600px;
+	}
+}
+@import url(animate.less);
